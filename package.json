@@ -1,0 +1,41 @@
+{
+  "name": "sn-table",
+  "version": "0.1.0",
+  "description": "",
+  "license": "MIT",
+  "author": {
+    "name": "",
+    "email": ""
+  },
+  "keywords": ["qlik", "nebula", "stardust"],
+  "files": ["dist"],
+  "engines": {
+    "node": ">=8"
+  },
+  "main": "dist/sn-table.js",
+  "module": "dist/sn-table.esm.js",
+  "scripts": {
+    "build": "nebula build",
+    "lint": "eslint src",
+    "set-env": "set HOSTNAME=192.168.0.45 && set PORT=8001",
+    "start": "npm run set-env && nebula serve --host 192.168.0.45 --port 8001",
+    "sense": "nebula sense",
+    "test:integration": "aw puppet --testExt '*.int.js' --glob 'test/integration/**/*.int.js'"
+  },
+  "devDependencies": {
+    "@after-work.js/aw": "6.0.14",
+    "@nebula.js/cli": "2.3.1",
+    "@nebula.js/cli-build": "2.3.1",
+    "@nebula.js/cli-serve": "2.3.1",
+    "@nebula.js/cli-sense": "2.3.1",
+    "eslint": "7.27.0",
+    "eslint-config-airbnb-base": "14.2.1",
+    "eslint-plugin-import": "2.23.4",
+    "eslint-plugin-mocha": "9.0.0",
+    "picasso.js": "1.2.1",
+    "picasso-plugin-q": "1.2.1"
+  },
+  "peerDependencies": {
+    "@nebula.js/stardust": "^2.x"
+  }
+}
